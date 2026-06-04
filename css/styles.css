@@ -600,29 +600,187 @@ footer {
 }
 
 /* ===========================
-   MEDIA QUERIES (Milestone 4)
+   MEDIA QUERIES — Milestone 4
+   Breakpoints:
+     Tablet:  max-width 1023px
+     Mobile:  max-width  767px
    =========================== */
 
-/* Tablet — 768px to 1023px */
+/* ----------------------------
+   TABLET — up to 1023px
+   Two-column layouts where appropriate;
+   nav stays horizontal; gaps tighten.
+   ---------------------------- */
 @media (max-width: 1023px) {
-  /* Tablet overrides added in Milestone 4 */
+
+  /* Intro: keep 2-column but tighten the gap and shrink the image column */
+  .intro {
+    gap: 2rem;
+  }
+
+  .intro-image {
+    flex: 0 0 280px;
+  }
+
+  /* Highlights: 2 per row at tablet width */
+  .highlight-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  /* Attraction cards: 2 per row */
+  .attraction-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  /* Gallery: 2 per row */
+  .gallery-grid figure {
+    flex: 1 1 calc(50% - 0.75rem);
+  }
+
+  /* Food entry image: slightly narrower */
+  .food-entry-img {
+    flex: 0 0 240px;
+    width: 240px;
+  }
+
+  /* Tighten section spacing */
+  :root {
+    --section-gap: 3.5rem;
+  }
 }
 
-/* Mobile — up to 767px */
+/* ----------------------------
+   MOBILE — up to 767px
+   Single-column, stacked layouts.
+   Mobile-specific experiences for
+   nav, hero, food entries, gallery.
+   ---------------------------- */
 @media (max-width: 767px) {
+
+  /* --- Nav: clean centered stacked menu, not squished horizontal --- */
   header {
     height: auto;
   }
 
   nav {
     flex-direction: column;
+    align-items: center;
     padding: 1rem 1.5rem;
-    gap: 0.75rem;
+    gap: 0.85rem;
+  }
+
+  .nav-logo {
+    font-size: 1.35rem;
   }
 
   nav ul {
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul a {
+    display: block;
+    padding: 0.6rem 1rem;  /* larger tap targets on touch */
+    font-size: 0.85rem;
+    border-bottom: none;
+  }
+
+  nav ul a[aria-current="page"] {
+    background-color: rgba(252, 209, 22, 0.12);
+    border-bottom: none;
+    color: var(--color-gold);
+  }
+
+  /* --- Hero: compact — image first, text tight --- */
+  .hero {
+    height: 320px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.95rem;
+  }
+
+  /* --- Intro: single column, image below text --- */
+  .intro {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .intro-image {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  /* --- Highlights: single column --- */
+  .highlight-card {
+    flex: 1 1 100%;
+  }
+
+  /* --- Page header: less padding on mobile --- */
+  .page-header {
+    padding: 2.5rem 1.25rem;
+  }
+
+  /* --- Attraction cards: single column --- */
+  .attraction-card {
+    flex: 1 1 100%;
+  }
+
+  /* --- Food entries: image stacks above text --- */
+  .food-entry {
+    flex-direction: column;
+  }
+
+  .food-entry-img {
+    flex: none;
+    width: 100%;
+    height: 220px;     /* fixed-height horizontal band when stacked */
+    align-self: auto;
+  }
+
+  .food-entry-body {
+    padding: 1.5rem;
+  }
+
+  /* --- Gallery: full-width images so photos have real impact --- */
+  .gallery-grid figure {
+    flex: 1 1 100%;
+  }
+
+  .gallery-grid figure img {
+    height: 240px;
+  }
+
+  /* --- Footer: tighten nav gap --- */
+  .footer-nav {
+    gap: 1.25rem;
+  }
+
+  /* --- General spacing --- */
+  :root {
+    --section-gap: 2.5rem;
+  }
+
+  .attractions-grid,
+  .food-entries,
+  .gallery-grid,
+  .highlights {
+    padding: 0 1rem;
+  }
+
+  .intro {
+    padding: 0 1rem;
   }
 }
