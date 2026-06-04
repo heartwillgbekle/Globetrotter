@@ -1,0 +1,169 @@
+/* ===========================
+   Globetrotter — Accra, Ghana
+   Stylesheet
+   =========================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- CSS Variables --- */
+:root {
+  --color-green:      #006B3F;
+  --color-gold:       #FCD116;
+  --color-red:        #CE1126;
+  --color-terracotta: #C2713A;
+  --color-ocean:      #1A6B8A;
+  --color-offwhite:   #FAF7F0;
+  --color-dark:       #1A1A1A;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body:    'Lato', sans-serif;
+
+  --max-width: 1200px;
+  --nav-height: 64px;
+}
+
+/* --- Typography --- */
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background-color: var(--color-offwhite);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+/* --- Navigation --- */
+header {
+  background-color: var(--color-green);
+  height: var(--nav-height);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav ul a {
+  color: var(--color-offwhite);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+nav ul a:hover {
+  color: var(--color-gold);
+}
+
+/* --- Layout Utility --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Sections (to be filled in Milestone 2+) --- */
+
+/* Hero */
+.hero {
+  /* Styles added in Milestone 2 */
+}
+
+/* Intro */
+.intro {
+  /* Styles added in Milestone 2 */
+}
+
+/* Highlights Strip */
+.highlights {
+  /* Styles added in Milestone 2 */
+}
+
+/* Page Header */
+.page-header {
+  /* Styles added in Milestone 2 */
+}
+
+/* Attraction Cards */
+.attractions-grid {
+  /* Flexbox applied in Milestone 3 */
+}
+
+.attraction-card {
+  /* Styles added in Milestone 2 */
+}
+
+/* Food Entries */
+.food-entries {
+  /* Flexbox applied in Milestone 3 */
+}
+
+.food-entry {
+  /* Styles added in Milestone 2 */
+}
+
+/* Gallery */
+.gallery-grid {
+  /* Flexbox applied in Milestone 3 */
+}
+
+.gallery-grid figure {
+  /* Styles added in Milestone 2 */
+}
+
+/* Footer */
+footer {
+  /* Styles added in Milestone 2 */
+}
+
+/* --- Media Queries (Milestone 4) --- */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  /* Tablet overrides added in Milestone 4 */
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
