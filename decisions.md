@@ -7,7 +7,10 @@
 - **Wireframe format used:** Digitally generated labeled diagrams (PNG files in `/wireframes/`)
 
 ## Milestone 1: HTML Structure
-_Add entries after building each page._
+- **HTML structure choice — `<article>` for attraction cards and food entries:** Each attraction and restaurant is a self-contained piece of content that makes sense on its own, which is exactly what `<article>` is designed for. A `<div>` would work visually but carries no semantic meaning. Using `<article>` signals to browsers, screen readers, and search engines what these content blocks actually represent.
+- **HTML structure choice — `<figure>` and `<figcaption>` for gallery images:** The `<figure>` element groups an image with its caption as a single semantic unit, and `<figcaption>` explicitly associates the caption text with the image above it. This is more meaningful than a `<div>` wrapper with a `<p>` tag — it tells the browser these two elements belong together, which matters for accessibility and for anyone reading the source.
+- **One thing Claude generated that I changed:** The initial stub used bare placeholder `<!-- comments -->` for all content. I replaced these with real, researched content for each attraction, restaurant, and gallery image — including specific place names, addresses, descriptions, and alt text. Generic placeholder text doesn't let you evaluate whether the structure actually works for the content it's meant to hold.
+- **One place where the wireframe guided a specific structure decision:** The food guide wireframe showed a horizontal card layout — image on the left, text block on the right. This required wrapping each `<article>` with both an `<img>` and a `<div class="food-entry-body">` as sibling children, rather than nesting the image inside the text block. The wireframe made it clear upfront that image and text needed to be flex siblings, not a parent-child relationship.
 
 ## Milestone 2: CSS Styling
 _Add entries after applying styles._

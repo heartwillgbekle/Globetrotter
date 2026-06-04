@@ -12,7 +12,7 @@
     <nav>
       <a href="index.html" class="nav-logo">Accra</a>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="attractions.html">Top Attractions</a></li>
         <li><a href="food-guide.html">Food Guide</a></li>
         <li><a href="gallery.html">Gallery</a></li>
@@ -21,24 +21,110 @@
   </header>
 
   <main>
+
     <!-- Hero Section -->
     <section class="hero">
-      <!-- Hero image + headline go here -->
+      <!-- Replace src with a high-res photo of Accra's skyline or Independence Square -->
+      <img
+        src="https://placehold.co/1400x600/1A1A1A/FAF7F0?text=Accra+Skyline"
+        alt="Panoramic view of Accra, Ghana — a modern city skyline meeting the Gulf of Guinea"
+        class="hero-img"
+      />
+      <div class="hero-overlay">
+        <h1>Welcome to Accra</h1>
+        <p>Ancient roots. Modern pulse. The heartbeat of West Africa.</p>
+      </div>
     </section>
 
     <!-- Intro Section -->
     <section class="intro">
-      <!-- Welcome paragraph + intro text go here -->
+      <div class="intro-text">
+        <h2>You Are Welcome</h2>
+        <p>
+          Accra is a city of layers. Ghana's capital sits where centuries of
+          history meet a surging contemporary energy — from the colonial-era
+          streets of Jamestown and the grandeur of Independence Square, to the
+          jazz bars of Osu and the art galleries putting Ghanaian artists on
+          the world stage.
+        </p>
+        <p>
+          This guide is for travelers who want more than the highlights reel.
+          Whether you're arriving for the first time or returning to reconnect
+          with your roots, Accra rewards those who look carefully. Dig in.
+        </p>
+      </div>
+      <div class="intro-image">
+        <!-- Replace with a close-up photo of Kente cloth, Adinkra print, or Accra street scene -->
+        <img
+          src="https://placehold.co/600x500/006B3F/FCD116?text=Accra+Street+Scene"
+          alt="Vibrant street life in Accra — colorful fabrics, bustling vendors, and city energy"
+        />
+      </div>
     </section>
+
+    <!-- Kente Divider -->
+    <div class="kente-divider" aria-hidden="true"></div>
 
     <!-- Highlights Strip -->
     <section class="highlights">
-      <!-- 3 featured highlight cards go here -->
+      <h2 class="section-title">Explore Accra</h2>
+      <div class="highlights-grid">
+
+        <article class="highlight-card">
+          <!-- Replace with a photo of Kwame Nkrumah Park or Jamestown Lighthouse -->
+          <img
+            src="https://placehold.co/600x400/006B3F/FCD116?text=Top+Attractions"
+            alt="Kwame Nkrumah Memorial Park — a landmark of Ghanaian independence"
+          />
+          <div class="highlight-card-body">
+            <h3>Top Attractions</h3>
+            <p>From the Pan-African history of Kwame Nkrumah Park to the ocean-side energy of Labadi Beach — the city's must-see landmarks, explained.</p>
+            <a href="attractions.html" class="btn">Explore Attractions →</a>
+          </div>
+        </article>
+
+        <article class="highlight-card">
+          <!-- Replace with a photo of a Ghanaian dish — jollof, fufu, or waakye -->
+          <img
+            src="https://placehold.co/600x400/CE1126/FAF7F0?text=Food+Guide"
+            alt="A plate of authentic Ghanaian jollof rice and grilled tilapia"
+          />
+          <div class="highlight-card-body">
+            <h3>Food Guide</h3>
+            <p>Accra's food scene runs from legendary chop bars serving waakye at dawn to upscale restaurants that have been feeding the city for 20+ years.</p>
+            <a href="food-guide.html" class="btn">Find Good Food →</a>
+          </div>
+        </article>
+
+        <article class="highlight-card">
+          <!-- Replace with a vibrant Accra photo — market, beach, or cityscape -->
+          <img
+            src="https://placehold.co/600x400/C2713A/FAF7F0?text=Photo+Gallery"
+            alt="Colorful Kente cloth displayed at the Arts Centre in Accra"
+          />
+          <div class="highlight-card-body">
+            <h3>Photo Gallery</h3>
+            <p>Nowhere in Accra is without color, music, and casual camaraderie. Browse the city through images — from Jamestown's fishing boats to Independence Square.</p>
+            <a href="gallery.html" class="btn">View Gallery →</a>
+          </div>
+        </article>
+
+      </div>
     </section>
+
   </main>
 
   <footer>
-    <!-- Footer content -->
+    <div class="footer-inner">
+      <p class="footer-logo">Accra</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="attractions.html">Top Attractions</a>
+        <a href="food-guide.html">Food Guide</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+      <p class="footer-credit">A Globetrotter travel guide · Ghana 🇬🇭</p>
+    </div>
   </footer>
 
 </body>
