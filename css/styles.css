@@ -1,6 +1,6 @@
 /* ===========================
    Globetrotter — Accra, Ghana
-   Stylesheet
+   Milestones 2 & 3: Styling + Flexbox Layout
    =========================== */
 
 /* --- Reset & Base --- */
@@ -12,40 +12,69 @@
 
 /* --- CSS Variables --- */
 :root {
-  --color-green:      #006B3F;
-  --color-gold:       #FCD116;
-  --color-red:        #CE1126;
-  --color-terracotta: #C2713A;
-  --color-ocean:      #1A6B8A;
-  --color-offwhite:   #FAF7F0;
-  --color-dark:       #1A1A1A;
+  /* Color Palette — Ghana national colors + supporting accents */
+  --color-green:      #006B3F;  /* Ghana flag green */
+  --color-gold:       #FCD116;  /* Ghana flag gold */
+  --color-red:        #CE1126;  /* Ghana flag red */
+  --color-terracotta: #C2713A;  /* warm earthy accent */
+  --color-ocean:      #1A6B8A;  /* Atlantic coast blue */
+  --color-offwhite:   #FAF7F0;  /* warm page background */
+  --color-dark:       #1A1A1A;  /* near-black for text */
+  --color-card-bg:    #FFFFFF;
+  --color-text-muted: #555555;
 
-  --font-heading: 'Playfair Display', serif;
-  --font-body:    'Lato', sans-serif;
+  /*
+   * FONT PLACEHOLDER — swap these two values after selecting your Google Font.
+   * Current: system fonts that closely match the feel of the final choice.
+   * To use Google Fonts: add a <link> in each HTML <head> and update these variables.
+   */
+  --font-heading: 'Libre Baskerville', Georgia, serif;
+  --font-body:    'Raleway', 'Segoe UI', sans-serif;
 
-  --max-width: 1200px;
-  --nav-height: 64px;
+  --max-width:   1200px;
+  --nav-height:  64px;
+  --section-gap: 5rem;
+  --card-radius: 6px;
+  --shadow-sm:   0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md:   0 8px 28px rgba(0, 0, 0, 0.13);
 }
 
-/* --- Typography --- */
+/* ===========================
+   BASE TYPOGRAPHY
+   =========================== */
+
 body {
   font-family: var(--font-body);
   color: var(--color-dark);
   background-color: var(--color-offwhite);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: var(--font-heading);
+  line-height: 1.25;
 }
 
-/* --- Navigation --- */
+p {
+  max-width: 70ch;
+}
+
+a {
+  color: var(--color-green);
+}
+
+/* ===========================
+   NAVIGATION
+   =========================== */
+
 header {
   background-color: var(--color-green);
   height: var(--nav-height);
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 nav {
@@ -63,101 +92,531 @@ nav {
   font-size: 1.5rem;
   color: var(--color-gold);
   text-decoration: none;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  font-style: italic;
 }
 
 nav ul {
   display: flex;
-  gap: 2rem;
+  gap: 2.25rem;
   list-style: none;
 }
 
 nav ul a {
-  color: var(--color-offwhite);
+  color: rgba(250, 247, 240, 0.85);
   text-decoration: none;
-  font-size: 0.95rem;
-  letter-spacing: 0.03em;
-  transition: color 0.2s;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 nav ul a:hover {
   color: var(--color-gold);
+  border-bottom-color: var(--color-gold);
 }
 
-/* --- Layout Utility --- */
-.container {
+/* Active page indicator */
+nav ul a[aria-current="page"] {
+  color: var(--color-gold);
+  border-bottom-color: var(--color-gold);
+}
+
+/* ===========================
+   KENTE DIVIDER
+   (Kente-inspired stripe accent between sections)
+   =========================== */
+
+.kente-divider {
+  height: 7px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-green)      0px,
+    var(--color-green)      28px,
+    var(--color-gold)       28px,
+    var(--color-gold)       52px,
+    var(--color-red)        52px,
+    var(--color-red)        64px,
+    var(--color-gold)       64px,
+    var(--color-gold)       88px,
+    var(--color-green)      88px,
+    var(--color-green)      116px,
+    var(--color-terracotta) 116px,
+    var(--color-terracotta) 132px
+  );
+}
+
+/* ===========================
+   SHARED BUTTON
+   =========================== */
+
+.btn {
+  display: inline-block;
+  background-color: var(--color-green);
+  color: var(--color-gold);
+  padding: 0.65rem 1.5rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  background-color: #004d2c;
+  transform: translateY(-1px);
+  color: var(--color-gold);
+}
+
+/* ===========================
+   HOME PAGE — HERO
+   =========================== */
+
+.hero {
+  position: relative;
+  height: 580px;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.60) 100%
+  );
+}
+
+.hero-overlay h1 {
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-overlay p {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  color: var(--color-offwhite);
+  max-width: 600px;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ===========================
+   HOME PAGE — INTRO
+   =========================== */
+
+.intro {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: var(--section-gap) auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--color-green);
+  margin-bottom: 1.2rem;
+}
+
+.intro-text p {
+  font-size: 1.05rem;
+  color: #3a3a3a;
+  margin-bottom: 1rem;
+}
+
+.intro-image {
+  flex: 0 0 360px;
+}
+
+.intro-image img {
+  width: 100%;
+  display: block;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===========================
+   HOME PAGE — HIGHLIGHTS STRIP
+   =========================== */
+
+.highlights {
+  max-width: var(--max-width);
+  margin: var(--section-gap) auto;
   padding: 0 1.5rem;
 }
 
-/* --- Sections (to be filled in Milestone 2+) --- */
-
-/* Hero */
-.hero {
-  /* Styles added in Milestone 2 */
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-/* Intro */
-.intro {
-  /* Styles added in Milestone 2 */
+.highlights-grid {
+  display: flex;
+  flex-wrap: wrap;      /* wraps at intermediate widths before media queries fire */
+  gap: 2rem;
 }
 
-/* Highlights Strip */
-.highlights {
-  /* Styles added in Milestone 2 */
+.highlight-card {
+  flex: 1 1 260px;      /* shrink/grow but never narrower than 260px */
+  display: flex;
+  flex-direction: column; /* makes card body fill remaining height */
+  background: var(--color-card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-/* Page Header */
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.highlight-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0; /* image never gets squished by flex */
+}
+
+.highlight-card-body {
+  padding: 1.5rem;
+  flex: 1;            /* stretches to fill remaining card height */
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-card-body h3 {
+  font-size: 1.3rem;
+  color: var(--color-green);
+  margin-bottom: 0.6rem;
+}
+
+.highlight-card-body p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.4rem;
+  max-width: none;
+  flex: 1; /* pushes button to bottom */
+}
+
+/* ===========================
+   SUBPAGE — PAGE HEADER BANNER
+   =========================== */
+
 .page-header {
-  /* Styles added in Milestone 2 */
+  background-color: var(--color-green);
+  color: var(--color-offwhite);
+  text-align: center;
+  padding: 4.5rem 1.5rem;
 }
 
-/* Attraction Cards */
+.page-header h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  max-width: 660px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  opacity: 0.9;
+}
+
+/* ===========================
+   TOP ATTRACTIONS
+   =========================== */
+
 .attractions-grid {
-  /* Flexbox applied in Milestone 3 */
+  max-width: var(--max-width);
+  margin: var(--section-gap) auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .attraction-card {
-  /* Styles added in Milestone 2 */
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column; /* allows body to stretch to equal height */
+  background: var(--color-card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-/* Food Entries */
+.attraction-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.attraction-card-body {
+  padding: 1.5rem;
+  flex: 1; /* all cards grow to match the tallest card in the row */
+}
+
+.attraction-card-body h2 {
+  font-size: 1.35rem;
+  color: var(--color-green);
+  margin-bottom: 0.35rem;
+}
+
+.attraction-location {
+  font-size: 0.85rem;
+  color: var(--color-terracotta);
+  font-style: italic;
+  margin-bottom: 0.85rem;
+}
+
+.attraction-card-body p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.68;
+  max-width: none;
+}
+
+/* ===========================
+   FOOD GUIDE
+   =========================== */
+
 .food-entries {
-  /* Flexbox applied in Milestone 3 */
+  max-width: var(--max-width);
+  margin: var(--section-gap) auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .food-entry {
-  /* Styles added in Milestone 2 */
+  display: flex;
+  background: var(--color-card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.22s ease;
 }
 
-/* Gallery */
+.food-entry:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.food-entry-img {
+  flex: 0 0 300px;
+  width: 300px;
+  align-self: stretch;   /* image fills full card height instead of a fixed pixel value */
+  object-fit: cover;
+  display: block;
+}
+
+.food-entry-body {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.food-entry-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.food-entry-header h2 {
+  font-size: 1.5rem;
+  color: var(--color-green);
+}
+
+.traveler-badge {
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.food-entry-body address {
+  font-style: italic;
+  color: var(--color-terracotta);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-body);
+}
+
+.food-entry-body p {
+  font-size: 0.96rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: none;
+  flex: 1; /* pushes the "Visit" button to the bottom of the entry */
+}
+
+/* ===========================
+   PHOTO GALLERY
+   =========================== */
+
 .gallery-grid {
-  /* Flexbox applied in Milestone 3 */
+  max-width: var(--max-width);
+  margin: var(--section-gap) auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .gallery-grid figure {
-  /* Styles added in Milestone 2 */
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column; /* caption always sits flush below the image */
+  background: var(--color-card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-/* Footer */
+.gallery-grid figure:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-grid figure img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.gallery-grid figcaption {
+  padding: 0.9rem 1rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  border-top: 4px solid var(--color-gold);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
 footer {
-  /* Styles added in Milestone 2 */
+  background-color: var(--color-dark);
+  color: var(--color-offwhite);
+  padding: 3rem 1.5rem;
+  margin-top: var(--section-gap);
 }
 
-/* --- Media Queries (Milestone 4) --- */
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
 
-/* Tablet */
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-gold);
+  letter-spacing: 0.06em;
+  font-style: italic;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-nav a {
+  color: rgba(250, 247, 240, 0.75);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: var(--color-gold);
+}
+
+.footer-credit {
+  font-size: 0.78rem;
+  color: rgba(250, 247, 240, 0.4);
+  letter-spacing: 0.03em;
+}
+
+/* ===========================
+   MEDIA QUERIES (Milestone 4)
+   =========================== */
+
+/* Tablet — 768px to 1023px */
 @media (max-width: 1023px) {
   /* Tablet overrides added in Milestone 4 */
 }
 
-/* Mobile */
+/* Mobile — up to 767px */
 @media (max-width: 767px) {
+  header {
+    height: auto;
+  }
+
   nav {
     flex-direction: column;
-    height: auto;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     gap: 0.75rem;
   }
 
