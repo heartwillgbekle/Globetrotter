@@ -29,4 +29,40 @@
 - **Claude breakpoint suggestion accepted — using `max-width` queries instead of `min-width`:** The assignment references suggest a mobile-first `min-width` approach. I accepted the recommendation to use `max-width` instead because the existing CSS was written desktop-first from Milestone 2 onward — the base styles define the desktop layout, and the media queries layer mobile overrides on top. Mixing mobile-first queries into a desktop-first stylesheet would require restructuring all the base rules and create conflicts. `max-width` queries are the correct choice when the base stylesheet is desktop-first.
 
 ## Stretch Features
-_Add entries if you implement any stretch features._
+
+### Interactive Navigation
+- **Decision — "Explore Accra" dropdown with nested menu:** Added a dropdown menu in the navigation bar that contains "Top Attractions", "Food Guide", and "Gallery". The "Top Attractions" item has a nested dropdown with direct links to each specific attraction (Kwame Nkrumah Park, Jamestown, Labadi Beach, Independence Square). This provides quick access to specific content while keeping the main nav clean.
+- **Implementation choice — CSS-only hover activation:** Used `:hover` pseudo-class instead of JavaScript to trigger dropdowns. This keeps the implementation simple and accessible. The nested dropdown appears to the right of the parent menu using `left: 100%` positioning, which is the standard desktop pattern for nested menus.
+- **Visual indicators — Unicode arrows (▾ and ▸):** Added down arrow (▾) for main dropdown and right arrow (▸) for nested dropdown to signal interactivity. These are Unicode characters, not images, so they scale perfectly and don't require additional assets.
+
+### Newsletter Signup Form
+- **Decision — footer placement across all pages:** Placed the newsletter form in the footer rather than a standalone page or mid-page section. This makes it always accessible without interrupting the browsing flow. The footer was redesigned from a simple centered layout to a three-column flexbox layout: Brand | Newsletter | Navigation.
+- **Form functionality — client-side alert only:** The form uses `onsubmit="event.preventDefault(); alert('Thanks for subscribing!');"` to demonstrate functionality without requiring backend infrastructure. The `event.preventDefault()` stops the page from reloading, and the alert confirms the submission.
+- **Design choice — input styling with transparency:** The email input uses `background-color: rgba(255, 255, 255, 0.1)` against the dark footer background, creating a subtle glass-like effect that integrates with the footer's visual hierarchy without competing with the brand or navigation sections.
+
+### Custom Styling
+- **Google Font choice — Playfair Display:** Selected Playfair Display for headings instead of the system fallback. It's an elegant serif with editorial weight that matches Accra's "deliberate gravitas" from the planning doc. Added to all four HTML files via Google Fonts CDN with `font-weight: 400;700` to support both regular and bold variants.
+- **Custom CSS property — `backdrop-filter: blur(2px)` on Kente divider:** Applied backdrop-filter to the `.kente-divider` element to create a subtle blur effect behind the geometric stripe pattern. This property wasn't covered in labs but adds visual depth. Also added `box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)` to lift the divider slightly off the page.
+- **Why this property matters:** `backdrop-filter` is a modern CSS property that creates effects based on what's behind an element, not the element itself. It's commonly used in glassmorphism design but here it subtly softens the boundary between the Kente stripe and the content above/below it.
+
+### Deployment
+- **Platform — GitHub Pages:** Deployed the site to GitHub Pages at `https://heartwillgbekle.github.io/Globetrotter/`. This makes the site publicly accessible and allows sharing with reviewers, instructors, or anyone interested in the project.
+- **Configuration — deployed from main branch:** GitHub Pages is configured to deploy from the `main` branch automatically. Any push to `main` triggers a redeploy within 2-3 minutes.
+- **Why GitHub Pages:** Free hosting, automatic HTTPS, simple configuration, and direct integration with the existing GitHub workflow. No additional build steps or external accounts required.
+
+## Post-Milestone Changes
+
+### Content Pivot — Food Guide
+- **Decision — switch from restaurants to traditional dishes:** The original food guide featured three Accra restaurants (Buka, Asanka Local, Auntie Muni's). Mid-project, I pivoted to showcasing eight traditional Ghanaian dishes instead (Jollof Rice, Waakye, Fufu, Banku, Kenkey, Groundnut Soup, Kelewele, Red Red). This shift made the guide more educational and culturally focused rather than being a restaurant directory.
+- **Why this change mattered:** The dish-focused approach teaches visitors *what* Ghanaian food is, not just *where* to eat it. It's more valuable for diaspora returnees unfamiliar with traditional dishes and more interesting for first-time visitors who want cultural context.
+- **Implementation impact:** Required restructuring the `<address>` field to show origin/ingredients instead of physical addresses, and replacing restaurant links with Wikipedia/external reference links for deeper learning.
+
+### Design System Simplification
+- **Removed CSS variables:** Replaced all CSS custom properties (`--color-green`, `--color-gold`, etc.) with direct color values (`#008000`, `#FCD116`). This made the stylesheet more straightforward and removed an abstraction layer that wasn't providing value for a project of this size.
+- **Color scheme iteration:** The nav and header background went through three iterations: original Ghana green (`#006B3F`) → light blue (`#4A90E2`) for experimentation → standard green (`#008000`) for the final version. The final green is slightly brighter than Ghana's official flag green, which improves contrast and readability.
+- **Removed traveler badges:** The food guide originally used category badges ("National Favorite", "Street Food Essential", etc.) to label each dish. These were removed because they added visual noise without adding meaningful information. The descriptions already convey what makes each dish important.
+
+### Content Cleanup
+- **Removed em dashes throughout:** Replaced all em dashes (—) with commas, periods, or removed them entirely. Em dashes created a stylistic inconsistency and made the text feel overly literary. The cleaner punctuation makes descriptions more direct and easier to scan.
+- **Removed Google Fonts (initially):** Early in the project, removed Google Fonts links to reduce external dependencies and improve page load speed. Later re-added Playfair Display as a stretch feature for custom styling.
+- **Cleaned up HTML comments:** Removed all placeholder comments like `<!-- Replace with a photo of... -->` once real images were added. This reduced file size and made the HTML cleaner to read and maintain.

@@ -6,7 +6,7 @@
 ## Core Planning Questions
 
 ### 1. What location are you building this guide for, and why did you choose it?
-Accra, Ghana — the capital city where West African tradition meets a surging contemporary creative scene. Accra carries deep historical weight: it was the epicenter of Ghana's independence movement, a hub of Pan-Africanism, and a city shaped by the legacy of the Transatlantic slave trade. At the same time, modern Accra pulses with Afrobeats, world-class contemporary art galleries, and a growing diaspora community that returns every December for "Detty December." It's a city most people know by name but don't truly know — and that gap is exactly what this guide aims to close.
+Accra, Ghana — the capital city where West African tradition meets a surging contemporary creative scene. Accra carries deep historical weight: it was the epicenter of Ghana's independence movement and a hub of Pan-Africanism. At the same time, modern Accra pulses with Afrobeats, world-class contemporary art galleries, and a growing diaspora community that returns every December for "Detty December." It's a city most people know by name but don't truly know and that gap is exactly what this guide aims to close.
 
 ### 2. Who is your primary audience?
 First-time international visitors and diaspora returnees who want to go beyond the tourist surface. These are curious, culturally aware travelers — people who want authentic food, meaningful history, and the city's real social energy, not just sanitized highlights. They may be planning their first trip to Ghana, reconnecting with their heritage, or simply deciding whether Accra belongs on their list.
@@ -19,8 +19,32 @@ The color palette will be anchored in Ghana's national colors — deep forest gr
 
 ---
 
+## Wireframes
+*(Created before Milestone 1 implementation)*
+
+**Format:** Digitally generated labeled diagrams exported as PNG files  
+**Location:** `/wireframes/` directory  
+**Files:**
+- `wireframe-home.png` — Home page layout with hero, intro, and highlights sections
+- `wireframe-attractions.png` — Top Attractions page with card grid
+- `wireframe-food-guide.png` — Food Guide page with horizontal entry cards
+- `wireframe-gallery.png` — Photo Gallery page with image grid
+
+**Key structural decisions from wireframes:**
+1. **Navigation placement:** Nav bar at the top of every page, sticky on scroll (though this was implemented later without explicitly documenting it in the wireframes)
+2. **Card-based layouts:** All content pages (attractions, food, gallery) use card-based designs with consistent spacing and shadows
+3. **Two-column home intro:** The wireframe showed text on the left, small accent image on the right — this guided the Flexbox implementation in Milestone 3
+4. **Horizontal food cards:** The food guide wireframe clearly showed image-left, text-right layout, which required structuring the `<img>` and text `<div>` as flex siblings rather than nesting them
+5. **Mobile considerations:** Wireframes included mobile views showing single-column stacking, which informed the responsive breakpoint decisions in Milestone 4
+
+**How wireframes guided implementation:**
+- The home page wireframe's three-card highlights section determined that `flex: 1 1 260px` would be the right flex basis for cards that need to wrap gracefully
+- The attractions page wireframe showed equal-height cards in a row, which led to the `flex: 1` on card bodies pattern to ensure uniform card heights
+- The gallery wireframe showed a masonry-style grid, which was simplified to equal-height image cards with `flex: 1 1 300px` for easier responsive behavior
+
+---
+
 ## Design Intent
-*(Added before Milestone 2 CSS work)*
 
 **Color palette and three words that describe the feeling:**
 - Primary: Ghana Green (`#006B3F`), Ghana Gold (`#FCD116`), Ghana Red (`#CE1126`)
@@ -38,7 +62,6 @@ Kente-inspired geometric stripe accents (alternating gold and green thin bars) u
 ---
 
 ## Flexbox Layout Plan
-*(Added before Milestone 3 implementation)*
 
 ### Navigation Bar
 - Horizontal row of links at desktop width, with the site title/logo on the left and nav links on the right
@@ -68,7 +91,6 @@ Kente-inspired geometric stripe accents (alternating gold and green thin bars) u
 ---
 
 ## Breakpoints Plan
-*(Added before Milestone 4 implementation)*
 
 **Three device sizes and breakpoints:**
 - **Mobile:** up to 767px — single column, stacked layouts, larger tap targets
