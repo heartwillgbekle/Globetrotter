@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Top Attractions — Accra, Ghana</title>
+  <title>Top Attractions - Accra, Ghana</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -14,10 +14,26 @@
   <header>
     <nav>
       <a href="index.html" class="nav-logo">Accra</a>
-      <ul>
+      <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="attractions.html" aria-current="page">Top Attractions</a></li>
-        <li><a href="food-guide.html">Food Guide</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Explore Accra ▾</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-nested">
+              <a href="attractions.html" class="dropdown-toggle" aria-current="page">Top Attractions ▸</a>
+              <ul class="dropdown-menu-nested">
+                <li><a href="attractions.html#kwame">Kwame Nkrumah Park</a></li>
+                <li><a href="attractions.html#jamestown">Jamestown</a></li>
+                <li><a href="attractions.html#labadi">Labadi Beach</a></li>
+                <li><a href="attractions.html#independence">Independence Square</a></li>
+              </ul>
+            </li>
+            <li><a href="food-guide.html">Food Guide</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+        <li><a href="attractions.html" aria-current="page">Attractions</a></li>
+        <li><a href="food-guide.html">Food</a></li>
         <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </nav>
@@ -25,25 +41,22 @@
 
   <main>
 
-    <!-- Page Header -->
     <section class="page-header">
       <h1>Top Attractions in Accra</h1>
       <p>
         Accra is a city that rewards the curious. These are the places that define
-        it — from the monuments of Ghana's hard-won independence to the ancient
+        it, from the monuments of Ghana's hard-won independence to the ancient
         fishing neighborhoods and the beaches the city unwinds on every weekend.
       </p>
     </section>
 
     <div class="kente-divider" aria-hidden="true"></div>
 
-    <!-- Attraction Cards -->
     <section class="attractions-grid">
 
       <article class="attraction-card">
-        <!-- Replace with a photo of Kwame Nkrumah Memorial Park / Mausoleum -->
         <img
-          src="https://placehold.co/600x400/006B3F/FCD116?text=Kwame+Nkrumah+Memorial+Park"
+          src="images/kwame.jpeg";
           alt="The Kwame Nkrumah Memorial Park and Mausoleum in Accra, Ghana"
         />
         <div class="attraction-card-body">
@@ -51,53 +64,50 @@
           <p class="attraction-location">Nkrumah Avenue, Accra Central</p>
           <p>
             This park and mausoleum is the spiritual center of modern Ghana. It
-            honors Kwame Nkrumah — Ghana's first president, visionary
+            honors Kwame Nkrumah, Ghana's first president, visionary
             Pan-Africanist, and the man who led the country to independence from
             British colonial rule in 1957. The grounds are serene and well-kept,
             with a striking black and white marble mausoleum, a museum tracing
             Nkrumah's life, and a statue that feels like a declaration. Even if
             you know little about Nkrumah before you arrive, you'll leave
-            understanding why he matters — not just to Ghana, but to the entire
+            understanding why he matters not just to Ghana, but to the entire
             African continent.
           </p>
         </div>
       </article>
 
       <article class="attraction-card">
-        <!-- Replace with a photo of Jamestown Lighthouse or the waterfront fishing boats -->
-        <img
-          src="https://placehold.co/600x400/1A6B8A/FAF7F0?text=Jamestown"
-          alt="The colorful fishing boats and colonial lighthouse of Jamestown, Accra"
+        <img src= "images/jamestown.jpg"
+        alt="The colorful fishing boats and colonial lighthouse of Jamestown, Accra"
         />
         <div class="attraction-card-body">
           <h2>Jamestown</h2>
           <p class="attraction-location">Jamestown, Accra Central</p>
           <p>
-            Jamestown is the oldest neighborhood in Accra — a dense, charismatic
+            Jamestown is the oldest neighborhood in Accra, a dense, charismatic
             fishing community built around a colonial-era lighthouse that you can
             still climb for sweeping views of the coast and the city behind it.
             The streets are alive with color: brightly painted fishing boats pulled
             onto the beach, murals covering crumbling walls, children playing in
             alleys between colonial buildings. This is the Accra that tourists
             often rush past. Don't. Walk slowly, talk to people, and let the
-            neighborhood show you what it is. The boxing gym here — the Attukwei
-            Art Foundation — is also one of Accra's most interesting creative
+            neighborhood show you what it is. The boxing gym here, the Attukwei
+            Art Foundation, is also one of Accra's most interesting creative
             spaces.
           </p>
         </div>
       </article>
 
       <article class="attraction-card">
-        <!-- Replace with a photo of Labadi Beach on a busy weekend -->
         <img
-          src="https://placehold.co/600x400/CE1126/FAF7F0?text=Labadi+Beach"
+          src="images/labadi.webp"
           alt="A busy Saturday at Labadi Beach (La Pleasure Beach) in Accra, Ghana"
         />
         <div class="attraction-card-body">
           <h2>Labadi Beach</h2>
           <p class="attraction-location">La Pleasure Beach, Labadi, Accra</p>
           <p>
-            Labadi Beach — officially La Pleasure Beach — is where Accra exhales.
+            Labadi Beach, officially La Pleasure Beach, is where Accra exhales.
             On weekends it transforms into the city's biggest open-air party:
             live highlife and Afrobeats music, grilled tilapia straight from
             beachside vendors, horses to ride along the surf, and a crowd that
@@ -110,9 +120,8 @@
       </article>
 
       <article class="attraction-card">
-        <!-- Replace with a photo of Independence Square / Black Star Gate -->
         <img
-          src="https://placehold.co/600x400/C2713A/FAF7F0?text=Independence+Square"
+          src="images/independence.jpeg"
           alt="The Independence Arch and Black Star Monument at Independence Square in Accra"
         />
         <div class="attraction-card-body">
@@ -121,7 +130,7 @@
           <p>
             Also known as Black Star Square, this is one of the largest city
             squares in the world and the symbolic stage of Ghanaian national
-            life. The Independence Arch stands at its center — a bold structure
+            life. The Independence Arch stands at its center, a bold structure
             inscribed with "Freedom and Justice," the words Nkrumah spoke when
             Ghana became the first sub-Saharan African country to gain
             independence in 1957. The Black Star Monument nearby honors those who
@@ -138,13 +147,30 @@
 
   <footer>
     <div class="footer-inner">
-      <p class="footer-logo">Accra</p>
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="attractions.html">Top Attractions</a>
-        <a href="food-guide.html">Food Guide</a>
-        <a href="gallery.html">Gallery</a>
-      </nav>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p class="footer-logo">Accra</p>
+          <p class="footer-tagline">Your guide to Ghana's vibrant capital</p>
+        </div>
+
+        <div class="footer-newsletter">
+          <h3>Stay Connected</h3>
+          <p>Get travel tips, cultural insights, and Accra updates delivered monthly.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+            <input type="email" placeholder="Your email address" required aria-label="Email address" />
+            <button type="submit" class="btn-newsletter">Subscribe</button>
+          </form>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="attractions.html">Top Attractions</a>
+          <a href="food-guide.html">Food Guide</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+      </div>
+
       <p class="footer-credit">A Globetrotter travel guide · Ghana 🇬🇭</p>
     </div>
   </footer>

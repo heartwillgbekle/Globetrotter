@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photo Gallery — Accra, Ghana</title>
+  <title>Photo Gallery - Accra, Ghana</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -14,10 +14,26 @@
   <header>
     <nav>
       <a href="index.html" class="nav-logo">Accra</a>
-      <ul>
+      <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="attractions.html">Top Attractions</a></li>
-        <li><a href="food-guide.html">Food Guide</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Explore Accra ▾</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-nested">
+              <a href="attractions.html" class="dropdown-toggle">Top Attractions ▸</a>
+              <ul class="dropdown-menu-nested">
+                <li><a href="attractions.html#kwame">Kwame Nkrumah Park</a></li>
+                <li><a href="attractions.html#jamestown">Jamestown</a></li>
+                <li><a href="attractions.html#labadi">Labadi Beach</a></li>
+                <li><a href="attractions.html#independence">Independence Square</a></li>
+              </ul>
+            </li>
+            <li><a href="food-guide.html">Food Guide</a></li>
+            <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          </ul>
+        </li>
+        <li><a href="attractions.html">Attractions</a></li>
+        <li><a href="food-guide.html">Food</a></li>
         <li><a href="gallery.html" aria-current="page">Gallery</a></li>
       </ul>
     </nav>
@@ -25,28 +41,26 @@
 
   <main>
 
-    <!-- Page Header -->
     <section class="page-header">
       <h1>Accra in Photos</h1>
       <p>
         Nowhere in Accra is without color, music, and casual camaraderie.
-        These images capture the city as it is — layered, proud, and completely alive.
+        These images capture the city as it is,layered, proud, and completely alive.
       </p>
     </section>
 
     <div class="kente-divider" aria-hidden="true"></div>
 
-    <!-- Gallery Grid -->
     <section class="gallery-grid">
 
       <figure>
         <!-- Replace with a real photo: Kwame Nkrumah Memorial Park at dusk -->
         <img
-          src="https://placehold.co/800x600/006B3F/FCD116?text=Kwame+Nkrumah+Park"
+          src="images/kwame.jpeg"
           alt="The Kwame Nkrumah Memorial Park and Mausoleum lit at dusk in Accra"
         />
         <figcaption>
-          The Kwame Nkrumah Memorial Park glows at dusk — a tribute to Ghana's
+          The Kwame Nkrumah Memorial Park glows at dusk, a tribute to Ghana's
           founding father and Pan-African icon.
         </figcaption>
       </figure>
@@ -54,11 +68,11 @@
       <figure>
         <!-- Replace with a real photo: colorful fishing boats at Jamestown beach -->
         <img
-          src="https://placehold.co/800x600/1A6B8A/FAF7F0?text=Jamestown+Fishing+Boats"
+          src="images/boats.jpeg"
           alt="Brightly painted fishing boats pulled onto the shore at Jamestown, Accra"
         />
         <figcaption>
-          The fishing boats of Jamestown — painted in reds, blues, and yellows —
+          The fishing boats of Jamestown . Painted in reds, blues, and yellows,
           have worked the Gulf of Guinea for generations.
         </figcaption>
       </figure>
@@ -66,11 +80,11 @@
       <figure>
         <!-- Replace with a real photo: the Black Star Gate / Independence Arch -->
         <img
-          src="https://placehold.co/800x600/1A1A1A/FCD116?text=Black+Star+Gate"
+          src="images/arch.jpeg"
           alt="The Independence Arch and Black Star Monument at Independence Square, Accra"
         />
         <figcaption>
-          The Independence Arch at Black Star Square — inscribed with
+          The Independence Arch at Black Star Square,inscribed with
           "Freedom and Justice," the words of Ghana's independence in 1957.
         </figcaption>
       </figure>
@@ -78,11 +92,11 @@
       <figure>
         <!-- Replace with a real photo: Labadi Beach on a Saturday afternoon -->
         <img
-          src="https://placehold.co/800x600/CE1126/FAF7F0?text=Labadi+Beach"
+          src="images/labadibeach.jpg"
           alt="A lively Saturday afternoon at Labadi Beach in Accra, with crowds, music, and ocean waves"
         />
         <figcaption>
-          Labadi Beach on a Saturday — highlife music, grilled tilapia, and a
+          Labadi Beach on a Saturday,highlife music, grilled tilapia, and a
           crowd that is effortlessly, magnificently dressed.
         </figcaption>
       </figure>
@@ -90,11 +104,11 @@
       <figure>
         <!-- Replace with a real photo: Makola Market vendors with fabrics or produce -->
         <img
-          src="https://placehold.co/800x600/C2713A/FAF7F0?text=Makola+Market"
+          src="images/makola.jpg"
           alt="The bustling stalls of Makola Market in central Accra, filled with fabrics, produce, and vendors"
         />
         <figcaption>
-          Makola Market — Accra's sprawling commercial heart, where everything
+          Makola Market,Accra's sprawling commercial heart, where everything
           from Kente cloth to fresh cassava moves through every day.
         </figcaption>
       </figure>
@@ -102,11 +116,11 @@
       <figure>
         <!-- Replace with a real photo: close-up of Kente cloth or Adinkra patterns at the Arts Centre -->
         <img
-          src="https://placehold.co/800x600/FCD116/1A1A1A?text=Kente+Cloth"
-          alt="Close-up of traditional Kente cloth — intricate gold, green, and red woven patterns"
+          src="images/kente.jpeg"
+          alt="Close-up of traditional Kente cloth,intricate gold, green, and red woven patterns"
         />
         <figcaption>
-          Kente cloth at the Arts Centre — each color and pattern carries meaning
+          Kente cloth at the Arts Centre, each color and pattern carries meaning
           rooted in Akan tradition, worn on occasions that matter.
         </figcaption>
       </figure>
@@ -117,13 +131,30 @@
 
   <footer>
     <div class="footer-inner">
-      <p class="footer-logo">Accra</p>
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="attractions.html">Top Attractions</a>
-        <a href="food-guide.html">Food Guide</a>
-        <a href="gallery.html">Gallery</a>
-      </nav>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p class="footer-logo">Accra</p>
+          <p class="footer-tagline">Your guide to Ghana's vibrant capital</p>
+        </div>
+
+        <div class="footer-newsletter">
+          <h3>Stay Connected</h3>
+          <p>Get travel tips, cultural insights, and Accra updates delivered monthly.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+            <input type="email" placeholder="Your email address" required aria-label="Email address" />
+            <button type="submit" class="btn-newsletter">Subscribe</button>
+          </form>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="attractions.html">Top Attractions</a>
+          <a href="food-guide.html">Food Guide</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+      </div>
+
       <p class="footer-credit">A Globetrotter travel guide · Ghana 🇬🇭</p>
     </div>
   </footer>

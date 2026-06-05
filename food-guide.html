@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Food Guide — Accra, Ghana</title>
+  <title>Food Guide - Accra, Ghana</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -14,10 +13,26 @@
   <header>
     <nav>
       <a href="index.html" class="nav-logo">Accra</a>
-      <ul>
+      <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="attractions.html">Top Attractions</a></li>
-        <li><a href="food-guide.html" aria-current="page">Food Guide</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Explore Accra ▾</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-nested">
+              <a href="attractions.html" class="dropdown-toggle">Top Attractions ▸</a>
+              <ul class="dropdown-menu-nested">
+                <li><a href="attractions.html#kwame">Kwame Nkrumah Park</a></li>
+                <li><a href="attractions.html#jamestown">Jamestown</a></li>
+                <li><a href="attractions.html#labadi">Labadi Beach</a></li>
+                <li><a href="attractions.html#independence">Independence Square</a></li>
+              </ul>
+            </li>
+            <li><a href="food-guide.html" aria-current="page">Food Guide</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+        <li><a href="attractions.html">Attractions</a></li>
+        <li><a href="food-guide.html" aria-current="page">Food</a></li>
         <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </nav>
@@ -25,119 +40,204 @@
 
   <main>
 
-    <!-- Page Header -->
     <section class="page-header">
-      <h1>Accra Food Guide</h1>
+      <h1>Food Guide</h1>
       <p>
-        Accra's food scene is one of its most honest and exciting entry points.
-        From 22-year-old institutions in Osu to a legendary street stall that
-        runs out of food by noon — here's where to eat, and who each spot is
-        best for.
+        Ghanaian cuisine is bold, flavorful, and deeply rooted in tradition.
+        From fufu pounded by hand to jollof rice that sparks regional debates,
+        here's your guide to the essential dishes that define Ghana's culinary soul.
       </p>
     </section>
 
     <div class="kente-divider" aria-hidden="true"></div>
 
-    <!-- Restaurant Entries -->
     <section class="food-entries">
 
       <article class="food-entry">
-        <!-- Replace with a photo of Buka Restaurant interior or their signature dishes -->
         <img
-          src="https://placehold.co/400x320/006B3F/FCD116?text=Buka+Restaurant"
-          alt="The welcoming dining room at Buka Restaurant in Osu, Accra"
+          src="images/jollof.webp"
+          alt="A plate of vibrant Ghanaian jollof rice with grilled chicken and fried plantains"
           class="food-entry-img"
         />
         <div class="food-entry-body">
           <div class="food-entry-header">
-            <h2>Buka Restaurant</h2>
-            <span class="traveler-badge">Best for: First-Time Visitors</span>
+            <h2>Jollof Rice</h2>
           </div>
-          <address>10th Lane, Oxford Street, Osu, Accra</address>
+          <address>Origin: West Africa · Ghana's version emphasizes Scotch bonnet peppers</address>
           <p>
-            Buka is the unofficial first stop for anyone being introduced to
-            Ghanaian cuisine. Open since 2003, it has quietly outlasted every
-            trend in Accra's food scene and remains the go-to recommendation for
-            a reason: consistent quality, a wide menu, and a two-story tree-house
-            setting that makes the meal feel like an occasion. The menu spans
-            Ghana and West Africa — fufu and light soup, groundnut soup, banku,
-            jollof rice, fried kelewele — and daily rotating specials keep
-            regulars coming back. It's upscale enough to feel comfortable for
-            visitors unfamiliar with chop bar culture, but the food is
-            completely genuine. Open Monday–Saturday, 12pm–9pm.
+            Jollof rice is the dish that sparks friendly debate across West
+            Africa. Ghana's version is known for its deep red-orange color,
+            softer consistency, and bold use of Scotch bonnet peppers. The rice
+            is cooked in a concentrated tomato-based stew with onions, spices
+            like thyme, curry powder, ginger, and bay leaves,absorbing every
+            ounce of flavor as it simmers. The best jollof develops a slightly
+            caramelized crust at the bottom of the pot, called "socarrat." It's
+            served with fried plantains, grilled chicken, or stews, and eaten at
+            celebrations, Sunday gatherings, and any meal that matters.
           </p>
           <a
-            href="https://www.instagram.com/bukarestaurant/?hl=en"
+            href="https://en.wikipedia.org/wiki/Jollof_rice"
             target="_blank"
             rel="noopener noreferrer"
             class="btn"
-          >Visit Buka →</a>
+          >Learn More →</a>
         </div>
       </article>
 
       <article class="food-entry">
-        <!-- Replace with a photo of Asanka Local's banku and tilapia or the lively dining room -->
         <img
-          src="https://placehold.co/400x320/C2713A/FAF7F0?text=Asanka+Local"
-          alt="Banku and grilled tilapia at Asanka Local restaurant in Osu, Accra"
+          src="images/waakye.jpg"
+          alt="A heaping plate of waakye,rice and beans with spaghetti, boiled egg, fish, and shito"
           class="food-entry-img"
         />
         <div class="food-entry-body">
           <div class="food-entry-header">
-            <h2>Asanka Local</h2>
-            <span class="traveler-badge">Best for: Foodies & Culture Seekers</span>
+            <h2>Waakye</h2>
           </div>
-          <address>Near Papaye, Oxford Street, Osu, Accra</address>
+          <address>Origin: Northern Ghana · Now a national breakfast and lunch staple</address>
           <p>
-            Asanka Local is always busy, which tells you everything. This is the
-            most recommended local food restaurant in Accra for visitors who want
-            to eat the way Accra actually eats — no concessions, no
-            tourist-proofing, just proper Ghanaian food served in a lively
-            canteen atmosphere. The tomato-rich jollof has perfectly separated
-            grains; the banku-and-tilapia is grilled to order and eaten with
-            your hands. High turnover means the pots are always fresh. Order the
-            jollof with grilled chicken and fried plantain, or go straight for
-            the banku and tilapia and a cold Malta. You will not be disappointed.
+            Waakye is rice and beans cooked together with sorghum leaves, which
+            give the dish its signature reddish-brown color. What makes waakye
+            special is the symphony of accompaniments: fried plantains, spaghetti
+            (called talia), boiled eggs, avocado, fried fish or beef, and shito,
+            a fiery black pepper sauce made with dried fish and shrimp. Some
+            vendors add gari foto (fried cassava flour) and a rich tomato-based
+            meat stew. It's the ultimate one-plate meal, served wrapped in
+            waakye leaves at street stalls across Ghana from dawn to early
+            afternoon.
           </p>
           <a
-            href="https://maps.app.goo.gl/asankalocal"
+            href="https://en.wikipedia.org/wiki/Waakye"
             target="_blank"
             rel="noopener noreferrer"
             class="btn"
-          >Find Asanka Local →</a>
+          >Learn More →</a>
         </div>
       </article>
 
       <article class="food-entry">
-        <!-- Replace with a photo of Auntie Muni's waakye stall or the food itself -->
         <img
-          src="https://placehold.co/400x320/CE1126/FAF7F0?text=Auntie+Muni%27s+Waakye"
-          alt="A heaped plate of waakye — rice and beans — from Auntie Muni's legendary stall in Ridge, Accra"
+          src="images/fufu.jpeg"
+          alt="Smooth balls of fufu served with groundnut soup and goat meat"
           class="food-entry-img"
         />
         <div class="food-entry-body">
           <div class="food-entry-header">
-            <h2>Auntie Muni's Waakye</h2>
-            <span class="traveler-badge">Best for: Street Food Adventurers</span>
+            <h2>Fufu</h2>
           </div>
-          <address>Ridge, Accra (near Kofi Otieku Street)</address>
+          <address>Made from: Cassava & unripe plantains (or yam, cocoyam)</address>
           <p>
-            Waakye — rice and black-eyed beans slow-cooked together, typically
-            served at breakfast — is one of Ghana's great street foods, and
-            Auntie Muni's is the most famous place to eat it in Accra. Locals
-            have been lining up here for years. A full plate arrives loaded with
-            accompaniments: spaghetti, fried fish or meat, boiled egg, avocado,
-            shito (black pepper sauce), and gari (cassava flour) sprinkled on
-            top. It's a lot, in the best possible way. Go early — by noon the
-            best portions are gone. Cash only, eat standing or nearby. This is
-            the real Accra.
+            Fufu is Ghana's most iconic starchy staple, a smooth, stretchy,
+            dough-like side dish made by pounding boiled cassava and unripe
+            plantains with water in a large wooden mortar. The pounding process
+            usually requires two people: one to pound, one to turn and fold the
+            mixture. The result is a bland, gummy ball with a consistency that
+            absorbs the rich flavors of whatever soup or stew it's paired with.
+            Fufu is always served with soup,groundnut, light soup, palm nut
+            soup, or kontomire. Tear off a piece, shape it with your fingers,
+            dip it in the soup, and swallow without chewing. Never use your left hand.
           </p>
           <a
-            href="https://maps.app.goo.gl/auntiemuni"
+            href="https://en.wikipedia.org/wiki/Fufu"
             target="_blank"
             rel="noopener noreferrer"
             class="btn"
-          >Find Auntie Muni's →</a>
+          >Learn More →</a>
+        </div>
+      </article>
+
+      <article class="food-entry">
+        <img
+          src="images/banku.webp"
+          alt="Banku served with grilled tilapia and hot pepper sauce"
+          class="food-entry-img"
+        />
+        <div class="food-entry-body">
+          <div class="food-entry-header">
+            <h2>Banku</h2>
+          </div>
+          <address>Origin: Ga-Dangbe people · Made from fermented corn & cassava dough</address>
+          <p>
+            Banku is a slightly sour, fermented dough made from corn and cassava
+            flour, cooked in boiling water until it forms a smooth, elastic
+            consistency. The fermentation gives banku its distinctive tangy
+            flavor that pairs perfectly with rich, spicy accompaniments. It's a
+            traditional meal of the Ga tribe, and the most iconic way to eat it
+            is with grilled tilapia and hot ground pepper mixed with onions and
+            tomatoes. You eat banku with your hands,pinch off a piece, dip it
+            in the pepper sauce, and enjoy with flaky grilled fish. It's also
+            served with okra stew, palm nut soup, or any pepper-heavy sauce.
+          </p>
+          <a
+            href="https://en.wikipedia.org/wiki/Banku"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+          >Learn More →</a>
+        </div>
+      </article>
+
+      <article class="food-entry">
+        <img
+          src="images/kenkey.jpg"
+          alt="Kenkey wrapped in corn husks, served with fried fish and pepper sauce"
+          class="food-entry-img"
+        />
+        <div class="food-entry-body">
+          <div class="food-entry-header">
+            <h2>Kenkey (Komi)</h2>
+          </div>
+          <address>Variations: Ga kenkey (corn husk), Fante kenkey (plantain leaf)</address>
+          <p>
+            Kenkey is fermented corn dough that's been wrapped and steamed,
+            either in dried corn husks (Ga kenkey) or plantain leaves (Fante
+            kenkey), which gives each version a different texture and subtle
+            flavor. The dough is dense, slightly sour from fermentation, and has
+            a firm, cake-like consistency. Kenkey is almost always eaten with
+            fried fish,often herring or mackerel,and a fiery chili pepper
+            sauce made with ground scotch bonnets, onions, and tomatoes. It's a
+            coastal staple, sold at roadside stands and chop bars, and beloved
+            for its filling, no-nonsense simplicity.
+          </p>
+          <a
+            href="https://en.wikipedia.org/wiki/Kenkey"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+          >Learn More →</a>
+        </div>
+      </article>
+
+      </article>
+
+      <article class="food-entry">
+        <img
+          src="images/kelewele.jpeg"
+          alt="Golden fried kelewele,spiced plantain cubes,on a plate with ground peanuts"
+          class="food-entry-img"
+        />
+        <div class="food-entry-body">
+          <div class="food-entry-header">
+            <h2>Kelewele</h2>
+          </div>
+          <address>Made from: Ripe plantains · Spiced with ginger, chili, cloves</address>
+          <p>
+            Kelewele is deep-fried ripe plantain cubes, seasoned with ginger,
+            hot pepper, salt, and sometimes cloves, nutmeg, or cinnamon. The
+            plantains are cut into chunks, tossed in the spice mix, and fried
+            until golden and caramelized at the edges. The result is sweet,
+            spicy, and slightly crispy on the outside with a soft, warm interior.
+            Kelewele is eaten as a snack on its own, often with roasted peanuts,
+            or as a side dish with bean stews, rice dishes, or waakye. It's sold
+            by street vendors in the evening and shows up at parties as finger
+            food. Simple, addictive, and unmistakably Ghanaian.
+          </p>
+          <a
+            href="https://en.wikipedia.org/wiki/Kelewele"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+          >Learn More →</a>
         </div>
       </article>
 
@@ -147,13 +247,30 @@
 
   <footer>
     <div class="footer-inner">
-      <p class="footer-logo">Accra</p>
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="attractions.html">Top Attractions</a>
-        <a href="food-guide.html">Food Guide</a>
-        <a href="gallery.html">Gallery</a>
-      </nav>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p class="footer-logo">Accra</p>
+          <p class="footer-tagline">Your guide to Ghana's vibrant capital</p>
+        </div>
+
+        <div class="footer-newsletter">
+          <h3>Stay Connected</h3>
+          <p>Get travel tips, cultural insights, and Accra updates delivered monthly.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+            <input type="email" placeholder="Your email address" required aria-label="Email address" />
+            <button type="submit" class="btn-newsletter">Subscribe</button>
+          </form>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="attractions.html">Top Attractions</a>
+          <a href="food-guide.html">Food Guide</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+      </div>
+
       <p class="footer-credit">A Globetrotter travel guide · Ghana 🇬🇭</p>
     </div>
   </footer>
