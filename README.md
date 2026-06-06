@@ -2,7 +2,7 @@
 
 Submitted by: **Heartwill Gbekle**
 
-Estimated time spent: **10** hours spent in total
+Estimated time spent: **6** hours spent in total
 
 Deployed Application (optional): [Globetrotter Deployed Site](https://heartwillgbekle.github.io/Globetrotter/)
 
