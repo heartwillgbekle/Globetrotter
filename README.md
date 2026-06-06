@@ -82,10 +82,7 @@ Deployed Application (optional): [Globetrotter Deployed Site](https://heartwillg
   - [X] Experiment with at least one CSS property not covered in the lessons or labs to customize your page further.
 
 ### Walkthrough Video
-
-`TODO://` Paste the **shareable link** to your animated app walkthrough below (replace `ADD_LOOM_LINK_HERE`). GitHub markdown won't render an embedded Loom player, so a plain link is what graders will use. Make sure the link is public and playable before submitting. (🚫 Remove this paragraph after adding your walkthrough link.)
-
-**Walkthrough video:** [Globetrotter Walkthrough](ADD_LOOM_LINK_HERE)
+**Walkthrough video:** [Globetrotter Walkthrough](https://www.loom.com/share/9e723d6343b740d1b3eccc351832d93d)
 
 ### Reflection
 
@@ -121,7 +118,7 @@ Overall, the labs gave me the vocabulary and basic patterns, but real-world impl
 
 2. **Plan the content pivot earlier** — I originally designed the Food Guide for restaurants, then switched to traditional dishes mid-project. If I'd done the content research before building the HTML structure, I could have avoided restructuring the page.
 
-3. **Use CSS custom properties more strategically** — I removed all CSS variables for simplicity, but in retrospect, keeping variables for spacing values (`--section-gap`, `--card-padding`) would have made responsive adjustments easier without sacrificing readability.
+3. **Use CSS custom properties more strategically** — I removed all CSS variables for simplicity, but in retrospect, keeping variables for spacing values would have made responsive adjustments easier without sacrificing readability.
 
 4. **Test on real devices sooner** — I relied on browser developer tools for responsive testing, but testing on actual phones and tablets would have caught layout issues earlier, particularly with the dropdown navigation on touch devices.
 
