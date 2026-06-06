@@ -48,7 +48,6 @@
 ### Deployment
 - **Platform — GitHub Pages:** Deployed the site to GitHub Pages at `https://heartwillgbekle.github.io/Globetrotter/`. This makes the site publicly accessible and allows sharing with reviewers, instructors, or anyone interested in the project.
 - **Configuration — deployed from main branch:** GitHub Pages is configured to deploy from the `main` branch automatically. Any push to `main` triggers a redeploy within 2-3 minutes.
-- **Why GitHub Pages:** Free hosting, automatic HTTPS, simple configuration, and direct integration with the existing GitHub workflow. No additional build steps or external accounts required.
 
 ## Post-Milestone Changes
 
@@ -57,12 +56,3 @@
 - **Why this change mattered:** The dish-focused approach teaches visitors *what* Ghanaian food is, not just *where* to eat it. It's more valuable for diaspora returnees unfamiliar with traditional dishes and more interesting for first-time visitors who want cultural context.
 - **Implementation impact:** Required restructuring the `<address>` field to show origin/ingredients instead of physical addresses, and replacing restaurant links with Wikipedia/external reference links for deeper learning.
 
-### Design System Simplification
-- **Removed CSS variables:** Replaced all CSS custom properties (`--color-green`, `--color-gold`, etc.) with direct color values (`#008000`, `#FCD116`). This made the stylesheet more straightforward and removed an abstraction layer that wasn't providing value for a project of this size.
-- **Color scheme iteration:** The nav and header background went through three iterations: original Ghana green (`#006B3F`) → light blue (`#4A90E2`) for experimentation → standard green (`#008000`) for the final version. The final green is slightly brighter than Ghana's official flag green, which improves contrast and readability.
-- **Removed traveler badges:** The food guide originally used category badges ("National Favorite", "Street Food Essential", etc.) to label each dish. These were removed because they added visual noise without adding meaningful information. The descriptions already convey what makes each dish important.
-
-### Content Cleanup
-- **Removed em dashes throughout:** Replaced all em dashes (—) with commas, periods, or removed them entirely. Em dashes created a stylistic inconsistency and made the text feel overly literary. The cleaner punctuation makes descriptions more direct and easier to scan.
-- **Removed Google Fonts (initially):** Early in the project, removed Google Fonts links to reduce external dependencies and improve page load speed. Later re-added Playfair Display as a stretch feature for custom styling.
-- **Cleaned up HTML comments:** Removed all placeholder comments like `<!-- Replace with a photo of... -->` once real images were added. This reduced file size and made the HTML cleaner to read and maintain.
